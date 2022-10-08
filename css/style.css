@@ -62,3 +62,8 @@ form input {
     position: absolute;
     top: 490px;
 }
+
+#bar-left {
+    width: 20%;
+    background-color: #4169E1;
+}

@@ -16,9 +16,9 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     }
 
     $user = validate($_POST['user']);
-    $password = validate($_POST['password']);
+    $password = validate(md5($_POST["password"]));
 
-    if (empty($user)) {
+    if (empty($user)) {  
         header("Location: ../view/index.php?error=Informe o seu usuário");
         exit();
     } else if (empty($password)) {
@@ -49,3 +49,6 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     header("Location: ../view/index.php");
     exit();
 }
+
+
+
