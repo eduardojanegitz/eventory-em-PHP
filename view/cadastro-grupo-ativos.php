@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,16 +9,16 @@
 </head>
 
 <body>
-    <h1>Cadastro de Grupo de Ativos</h1>
-    <form action="?page=salvar-ativos" method="POST">
-    <input type="hidden" name="acao-ativos" value="cadastrar">
-        <label>Descrição</label>
-        <input type="text" name="description">
+    <h1 class="title-main">Cadastro de Grupo de Ativos</h1>
+    <form class="flex" action="?page=salvar-ativos" method="POST">
+    <input type="hidden" name="acao-ativos" value="cadastrar-ativos">
+        <label class="box-label">Descrição</label>
+        <input class="box" type="text" name="description">
 
-        <label>Código Alternativo</label>
-        <input type="text" name="alternative">
+        <label class="box-label">Código Alternativo</label>
+        <input class="box" type="text" name="alternative">
 
-        <button type="submit">Cadastrar</button>
+        <button class="btn" type="submit">Cadastrar</button>
     </form>
 
 </body>

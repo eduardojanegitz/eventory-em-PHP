@@ -1,0 +1,86 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(to); 
+} */
+
+.main {
+    width: 25%;
+    height: auto;
+    padding: 25px 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+    margin: 6.5%;
+    text-align: center;
+}
+
+.main p {
+    font-size: 3rem;
+    font-family: pacifico;
+}
+
+.main .input {
+    width: 90%;
+    padding: 10px;
+    margin: 50px 0 0 0;
+    border: 2px solid #9e9e9e;
+    outline: none;
+    font-size: 1.2rem;
+    font-family: Josefin Sans;
+}
+
+.main .input:focus {
+    border: 2px solid #f89b29;
+}
+
+.main .submit {
+    width: 90%;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-family: Josefin Sans;
+    border: none;
+    outline: none;
+    margin: 15px 0;
+    background-color: #f89b29;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.main .submit:hover {
+    box-shadow: 0 15px 25px -10px #f89b29;
+}
+
+#barcode {
+    width: 90%;
+    margin: 25px 0;
+    border: 2px solid #f89b29;
+}
+
+/* @media print {
+     esconder tudo 
+    body * {
+      visibility: hidden;
+    }
+    /* exibir somente o que tem na div para imprimir 
+    #imprimir, #imprimir * {
+      visibility: visible;
+    }
+    #imprimir {
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+    
+  } */

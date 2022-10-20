@@ -1,6 +1,6 @@
 <?php
 switch ($_REQUEST["acao-ativos"]) {
-    case "cadastrar":
+    case "cadastrar-ativos":
         $description = $_POST["description"];
         $alternative = $_POST["alternative"];
 
@@ -17,5 +17,23 @@ switch ($_REQUEST["acao-ativos"]) {
             print "<script>location.href='?page=cadastro-grupo-ativos;</script>";
         }
         break;
-    }
-        ?>
+
+    case "cadastrar-patrimonio":
+        $nf = $_POST["nf"];
+        $fornecedor = $_POST["fornecedor"];
+        $valor = $_POST["valor"];
+        $depreciacao = $_POST["depreciacao"];
+
+        $sql = "INSERT INTO asset (nf, fornecedor, valor, depreciacao) VALUES
+            ('{$nf}','{$fornecedor}','{$valor}','{$depreciacao}')";
+        $res = $conn->query($sql);
+
+        if ($res == true) {
+            print "<script>alert('Cadastrado com sucesso!');</script>";
+            print "<script>location.href=menu.php;</script>";
+        } else {
+            print "<script>alert('Não foi possível cadastrar!');</script>";
+            print "<script>location.href='?page=cadastro-grupo-ativos;</script>";
+        }
+        break;
+}

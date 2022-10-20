@@ -14,10 +14,10 @@ switch ($_REQUEST["acao"]) {
 
         if ($res == true) {
             print "<script>alert('Cadastrado com sucesso!');</script>";
-            print "<script>location.href='?page=listar;</script>";
+            print "<script>location.href='?page=cadastro;</script>";
         } else {
             print "<script>alert('Não foi possível cadastrar!');</script>";
-            print "<script>location.href='?page=listar;</script>";
+            print "<script>location.href='?page=cadastro;</script>";
         }
         break;
     case "editar":
