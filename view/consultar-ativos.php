@@ -10,9 +10,9 @@
 
 <body>
     <main>
-        <h1 class="title-main">Consultar Usuários</h1>
+        <h1 class="title-main">Consultar Ativos</h1>
         <?php
-        $sql = "SELECT * FROM users";
+        $sql = "SELECT * FROM asset";
 
         $res = $conn->query($sql);
 
