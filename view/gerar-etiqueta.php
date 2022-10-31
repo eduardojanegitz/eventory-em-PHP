@@ -9,26 +9,39 @@
 </head>
 
 <body>
+<?php   
+    // $sql = "SELECT concat(MAX(id_barcode), lote, qtd) FROM barcodee;";
+    // $max = "SELECT MAX(id_barcode) FROM barcodee;";
+    $sql = "SELECT * FROM barcodee ORDER BY id_barcode DESC;";
+    
+    // $res1 = $conn->query($max);
+    $res = $conn->query($sql);
+    $row = $res->fetch_object();
+    ?>
+
     <h1 class="title-main">Gerar Etiquetas</h1>
     <form class="flex" action="?page=salvar-etiqueta" method="POST">
         <input type="hidden" name="acao-etiqueta" value="cadastrar-etiqueta">
+        <label class="box-label">Código do Ativo</label>
+        <input class="box" type="text" name="cod_ativo">
+
         <label class="box-label">Lote</label>
         <input class="box" type="text" name="lote">
 
         <label class="box-label">Quantidade</label>
         <input class="box" type="text" name="qtd">
 
-        <label class="box-label ">Número da Etiqueta</label>
-        <input type="text" class="box input" maxlength="10">
+        <!-- <label class="box-label ">Número da Etiqueta</label>
+        <input type="text" class="box input" maxlength="10" value="<?php print $row->id_asset . $row->lote . $row->qtd?>" disabled="disabled"> -->
 
         
         
-        <button class="btn" type="submit">Gerar</button>
+        <button class="btn" type="submit">Salvar</button>
        
         <br>
     </form>
-    <button style="margin-left: 10%" class="btn" onclick="barcodeGen()">Gerar Etiqueta</button>
-    <svg id="barcode" class="box"></svg>
+    <!-- <button style="margin-left: 10%" class="btn" onclick="barcodeGen()">Gerar Etiqueta</button>
+    <svg id="barcode" class="box"></svg> -->
     
     <script src="../js/main.js"></script>
     <script src="../js/JsBarcode.all.min.js"></script>

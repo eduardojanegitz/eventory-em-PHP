@@ -462,6 +462,7 @@ main .inventarios-recentes a {
 /****/
 .right {
     margin-top: 1.4rem;
+
 }
 
 .right .top {
@@ -711,10 +712,23 @@ main .inventarios-recentes a {
 /* .main .submit:hover {
     box-shadow: 0 15px 25px -10px #f89b29;
 } */
-
+/* 
 #barcode {
     width: 60%;
     margin: 25px 0;
     border: 2px solid #f89b29;
     margin-left: 10%;
+} */
+
+.img {
+    width: 5%;
+    height: 5%;
+}
+
+.submit {
+    width: 5%;
+    height: 5%;
+    background: #111e88;
+    color: #dce1eb;
+    border-radius: 15%;
 }

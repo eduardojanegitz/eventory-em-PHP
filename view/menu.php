@@ -30,7 +30,7 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="../images/logo-evecoding.png" alt="">
+                    <img src="../images/logo-evecoding.png" alt="Logo da Empresa - Evecoding">
                     <h2>Eve<span class="title">coding</span></h2>
                     <div class="close" id="close-btn">
                         <span class="material-symbols-outlined">
@@ -49,7 +49,7 @@
                     <span class="material-symbols-outlined">app_registration</span>
                     <h3>Cadastro de Usuários</h3>
                 </a>
-                <a href="?page=consultar">
+                <a href="?page=consultar" class="active">
                     <span class="material-symbols-outlined">list_alt</span>
                     <h3>Consultar Usuários</h3>
                 </a>
@@ -103,35 +103,47 @@
                     include("gerar-etiqueta.php");
                     break;
                 default:
+
+
+                    
+                    
+                        
+                        $sql = "SELECT * FROM asset;";
+                        $res = $conn->query($sql);
+                        $rowcount = mysqli_num_rows($res);
+                    
+
                     print "<h1 class='title-main'>Dashboard</h1>
                         
-            <div class='date'>
-            <input type='date'>
-        </div>
-        <div class='insights'>
-            <div class='total-ativos'>
-                <span class='material-symbols-outlined'>analytics</span>
+                        <div class='date'>
+                            <input type='date'>
+                        </div>
 
-                <div class='middle'>
+                      <div class='insights'>
+                        <div class='total-ativos'>
+                            <span class='material-symbols-outlined'>analytics</span>
 
-                    <div class='left'>
-                        <h3>Total de Ativos</h3>
-                        <h1>1000</h1>
-                    </div>
-                    <div class='progress'>
-                        <svg>
-                            <circle cx='38' cy='38' r='36'></circle>
-                        </svg>
-                    <div class='number'>
-                        <p>80%</p> 
-                    </div>
-                    
-                    </div>
-                    
-                    
-                </div>
-                <small class='text-muted'>Últimos 24 horas</small>
-            </div>
+                                <div class='middle'>
+                                    <div class='left'>
+                                        <h3>Total de Ativos</h3>
+
+                                            <h1> $rowcount </h1>
+                                        
+                                    
+                                      </div>
+
+                                    <div class='progress'>
+                                        <svg>
+                                            <circle cx='38' cy='38' r='36'></circle>
+                                        </svg>
+                                        <div class='number'>
+                                            <p>80%</p> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <small class='text-muted'>Últimos 24 horas</small>
+                        </div>
 
 
             <div class='total-ativos'>

@@ -11,7 +11,11 @@
 <body>
     <h1 class="title-main">Cadastro de Ativos</h1>
     <form class="flex" action="?page=salvar-ativos" method="POST">
-    <input type="hidden" name="acao-ativos" value="cadastrar-patrimonio">
+        <input type="hidden" name="acao-ativos" value="cadastrar-patrimonio">
+
+        <label class="box-label">Nome do Ativo</label>
+        <input class="box" type="text" name="nome">
+
         <label class="box-label">Nota Fiscal</label>
         <input class="box" type="text" name="nf">
 
