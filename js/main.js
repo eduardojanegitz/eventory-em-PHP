@@ -3,10 +3,11 @@ function barcodeGen() {
     JsBarcode('#barcode', data , {
         background : '#fff' ,
         color : '#000' ,
-        height : 100,
-        displayValue : true
+        height : 50,
+        displayValue : false
     })
 }
+
 
 
 function m() {

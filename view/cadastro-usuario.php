@@ -30,8 +30,8 @@
         <input type="text" name="department">
 
         <label class="box-label">Departamento</label>
-        <select class="box" type="text" name="department">
-            <option value="">Selecione o seu departamento...</option>
+        <select class="box" type="text" name="department" required>
+            <option value="" >Selecione o seu departamento...</option>
             <option value="TI">TI</option>
             <option value="controladoria">Controladoria</option>
             <option value="compras">Compras</option>
