@@ -22,28 +22,23 @@
             print "<table class='table flex'>";
             print "<tr class='table'>";
             print "<th>#</th>";
-            print "<th class='table'>Usuário</th>";
-            print "<th>Nome</th>";
-            print "<th>E-mail</th>";
-            print "<th>Departamento</th>";
-            print "<th>Ações</th>";
+            print "<th class='table'>Nome do Ativo</th>";
+            print "<th>Depreciação</th>";
             while ($row = $res->fetch_object()) {
                 print "<tr class='table'>";
-                print "<td>" . $row->id_users . "</td>";
-                print "<td>" . $row->usuario . "</td>";
-                print "<td>" . $row->nome . "</td>";
-                print "<td>" . $row->email . "</td>";
-                print "<td>" . $row->departamento . "</td>";
+                print "<td>" . $row->id_asset. "</td>";
+                print "<td>" . $row->nome_ativo . "</td>";
+                print "<td>" . $row->depreciacao . "</td>";
                 print "<td>
-        <button onclick=\"location.href='?page=editar&id=" . $row->id_users . "';\" >Editar</button>
-        <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id=" . $row->id_users . "';}else{false;}\"
+        <button class='btn-editar' onclick=\"location.href='?page=editar&id_asset=" . $row->id_asset. "';\" >Editar</button>
+        <button class='btn-excluir' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id_asset=" . $row->id_asset . "';}else{false;}\"
         >Excluir</button>
         </td>";
                 print "</tr>";
             }
             print "</table>";
         } else {
-            print "<p class='alert-danger'>Não foi encontrado nenhum resultado</p>";
+            print "<p class='flex'>Não foi encontrado nenhum resultado</p>";
         }
 
         ?>

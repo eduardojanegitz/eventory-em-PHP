@@ -34,7 +34,7 @@
             <option value="portaria">Portaria</option>
         </select>
         <button class="btn" type="submit">Cadastrar</button>
-        </div>
+        
     </form>
 
 </body>

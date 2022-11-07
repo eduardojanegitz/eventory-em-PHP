@@ -35,15 +35,15 @@
                 print "<td>" . $row->email . "</td>";
                 print "<td>" . $row->departamento . "</td>";
                 print "<td>
-        <button onclick=\"location.href='?page=editar&id=" . $row->id_users . "';\" >Editar</button>
-        <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id=" . $row->id_users . "';}else{false;}\"
+        <button class='btn-editar' onclick=\"location.href='?page=editar&id_users=" . $row->id_users . "';\" >Editar</button>
+        <button class='btn-excluir' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id_users=" . $row->id_users . "';}else{false;}\"
         >Excluir</button>
         </td>";
                 print "</tr>";
             }
             print "</table>";
         } else {
-            print "<p class='alert-danger'>Não foi encontrado nenhum resultado</p>";
+            print "<p class='flex'>Não foi encontrado nenhum resultado</p>";
         }
 
         ?>

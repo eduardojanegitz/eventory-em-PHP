@@ -4,6 +4,7 @@ function barcodeGen() {
         background : '#fff' ,
         color : '#000' ,
         height : 50,
+        width : 2,
         displayValue : false
     })
 }

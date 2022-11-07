@@ -23,20 +23,21 @@ include("../model/config.php");
    
     $row = $res->fetch_object();
     ?>
-    <div class="main">
+    <div class="in">
         <input type="text" class="input" placeholder="Enter Value" maxlength="10" value="<?php print $row->id_asset . $row->lote . $row->qtd?>" disabled="disabled">
         <?php
         $sql1 = "SELECT b.lote, b.qtd, a.nome_ativo from barcodee AS b INNER JOIN asset AS a ON(b.id_asset = a.id_asset) WHERE b.id_asset = {$row->id_asset} ;";
         $res1 = $conn->query($sql1);
         $row1 = $res1->fetch_object();
-        print $row1->nome_ativo;
+        print "<h2 style='text-align: center'>$row1->nome_ativo</h2>"
 
         ?>
         <img class="img" src="../images/logo-facens-azul.png" alt="">
+        <svg style="text-align: center;" id="barcode" ></svg>
         <button class="submit" onclick="imprimir()">Gerar</button>
         <button class="submit " onclick="window.print()">Imprimir</button>
         
-        <svg id="barcode" ></svg>
+        
     </div>
 
    

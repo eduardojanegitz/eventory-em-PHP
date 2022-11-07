@@ -141,7 +141,6 @@ b {
 
 aside {
     height: 100vh;
-
 }
 
 aside .top {
@@ -216,10 +215,10 @@ aside .sidebar a:last-child {
 aside .sidebar a.active {
     background: var(--color-light);
     color: var(--color-primary);
-    margin-left: 0 ;
+    margin-left: 0;
 }
 
-aside .sidebar a.active:before{
+aside .sidebar a.active:before {
     content: '';
     width: 6px;
     height: 100%;
@@ -258,7 +257,7 @@ main .title-main {
 
 .box {
     border-radius: 10px;
-    border: 1px solid var(--color-dark); 
+    border: 1px solid var(--color-dark);
     padding: 1.5%;
     margin-bottom: 5%;
     width: 60%;
@@ -272,19 +271,19 @@ main .title-main {
     font-weight: 500;
 }
 
- .flex {
+.flex {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-left: 5%;  
-} 
+    margin-left: 5%;
+}
 
 .btn {
     cursor: pointer;
     color: white;
     padding: 1.5%;
     border-radius: 10px;
-    background: #4169E1; 
+    background: #4169E1;
     margin-left: 5%;
     width: 30%;
     transition: 1s;
@@ -297,29 +296,37 @@ main .title-main {
 
 .table {
     border-collapse: collapse;
-    width: 70%;
-    text-align: center;
+    width: 50rem;
+
+
+
 }
 
 td {
-    /* border: 1px solid black; */
-     /* padding: 5%; */
-     padding-right: 5rem;
+
+    /* padding: 5%; */
+    /* margin-left: 5rem; */
     /* margin: 1%; */
     color: var(--color-info-dark);
- 
+    /* text-align: center; */
+    /* padding: 2.5rem; */
+    /* padding-right: 5rem; */
+    /* border: 1px solid black; */
+    text-align: center;
+    width: 20rem;
 }
 
 th {
-    /* border: 1px solid black;
-    text-align: center; */
+    /* border: 1px solid black; */
+    /* text-align: center; */
     /* padding: 3%; */
-   padding-right: 5rem;
-   width: 100%;
-   
+    /* margin-left: 5rem; */
+    /* width: 100%;
+    */
+    width: 20rem;
 }
 
- .date {
+.date {
     padding-left: 10%;
 }
 
@@ -346,7 +353,7 @@ main .insights {
     margin-left: 10%;
 }
 
-main .insights > div {
+main .insights>div {
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
@@ -355,11 +362,11 @@ main .insights > div {
     transition: all 300ms ease;
 }
 
-main .insights > div:hover {
+main .insights>div:hover {
     box-shadow: none;
 }
 
-main .insights > div span {
+main .insights>div span {
     background: var(--color-primary);
     padding: 0.5rem;
     border-radius: 50%;
@@ -367,7 +374,7 @@ main .insights > div span {
     font-size: 2rem;
 }
 
-main .insights > div .middle {
+main .insights>div .middle {
     display: flex;
 
     align-items: center;
@@ -403,7 +410,7 @@ main .insights svg circle {
 
 main .insights .total-ativos svg circle {
     stroke-dashoffset: -30;
-    stroke-dasharray: 200;    
+    stroke-dasharray: 200;
 }
 
 main .insights .progress .number {
@@ -548,12 +555,12 @@ main .inventarios-recentes a {
         width: 83vw;
     }
 
-    main table thead tr th:last-child, 
+    main table thead tr th:last-child,
     main table thead tr th:first-child {
         display: none;
     }
 
-    main table tbody td th:last-child, 
+    main table tbody td th:last-child,
     main table tbody td th:first-child {
         display: none;
     }
@@ -563,8 +570,8 @@ main .inventarios-recentes a {
     .container {
         width: 100%;
         grid-template-columns: 1fr;
-       margin-left: -10%;
-      
+        margin-left: -10%;
+
     }
 
     aside {
@@ -661,7 +668,7 @@ main .inventarios-recentes a {
         left: 1rem;
     }
 
-    .right .top button  {
+    .right .top button {
         display: inline-block;
         background: transparent;
         cursor: pointer;
@@ -712,13 +719,11 @@ main .inventarios-recentes a {
 /* .main .submit:hover {
     box-shadow: 0 15px 25px -10px #f89b29;
 } */
-/* 
+
 #barcode {
-    width: 60%;
-    margin: 25px 0;
-    border: 2px solid #f89b29;
-    margin-left: 10%;
-} */
+    display: flex;
+    flex-direction: row;
+}
 
 .img {
     width: 5%;
@@ -731,4 +736,31 @@ main .inventarios-recentes a {
     background: #111e88;
     color: #dce1eb;
     border-radius: 15%;
+}
+
+.btn-editar {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background: #2137df;
+    color: white;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    cursor: pointer;
+}
+
+.btn-excluir {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: red;
+    color: white;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    cursor: pointer;
+}
+
+.in {
+
+    width: 45rem;
 }

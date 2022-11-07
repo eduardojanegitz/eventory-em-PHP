@@ -6,39 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 
 <body>
-    <h1>Novo Usuário</h1>
     <?php
-    $sql = "SELECT * FROM usuarios WHERE id=" . $_REQUEST["id"];
+    $sql = "SELECT * FROM users WHERE id_users=" . $_REQUEST["id_users"];
     $res = $conn->query($sql);
     $row = $res->fetch_object();
     ?>
 
-    <form action="?page=salvar" method="POST">
-        <input type="hidden" name="acao" value="editar">
-        <input type="hidden" name="id" value="<?php print $row->id; ?>">
+    <h1 class="title-main">Novo Usuário</h1>
 
-        <div class="mb-3">
-            <label>Nome</label>
-            <input type="text" name="nome" value="<?php print $row->nome; ?>" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label>E-mail</label>
-            <input type="email" name="email" value="<?php print $row->email; ?>" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label>Senha</label>
-            <input type="password" name="senha" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label>Data de Nascimento</label>
-            <input type="date" name="data_nasc" value="<?php print $row->data_nasc; ?>" class="form-control">
-        </div>
-        <div class="mb-3">
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </div>
+
+    <form class="flex" action="?page=salvar" method="POST">
+        <input type="hidden" name="acao" value="editar">
+        <input type="hidden" name="id" value="<?php print $row->id_users; ?>">
+
+        <label class="box-label">Usuário</label>
+        <input class="box" type="text" name="user" value="<?php print $row->usuario; ?>">
+
+        <label class="box-label">Nome</label>
+        <input class="box" type="text" name="name" value="<?php print $row->nome; ?>">
+
+            <!-- <label class="box-label">Senha</label>
+            <input class="box" type="password" name="password" value="<?php print $row->senha; ?>"> -->
+
+        <label class="box-label">E-mail</label>
+        <input class="box" type="email" name="email" value="<?php print $row->email; ?>">
+
+        <label class="box-label">Departamento</label>
+        <select class="box" type="text" name="department" required value="<?php print $row->departamento; ?>">
+            <option value="">Selecione o seu departamento...</option>
+            <option value="TI">TI</option>
+            <option value="controladoria">Controladoria</option>
+            <option value="compras">Compras</option>
+            <option value="portaria">Portaria</option>
+        </select>
+        
+            <button type="submit" class="btn">Enviar</button>
+        
     </form>
 </body>
 
