@@ -10,10 +10,10 @@
 /* DIV DIAGONAL */ 
 
 main {
-    width: 100%;
+    width: 85.3rem;
     min-width: auto;
     height: auto;
-    min-height: 649.3px;
+    min-height: 40.55rem;
     background-color: #fff;
     background-image: -webkit-linear-gradient(65deg, #4169E1 50%, #fff 50%);
 }
@@ -29,15 +29,15 @@ main {
 #container-title { 
     text-transform: uppercase;
     color: #1E90FF;
-    font-size: 35px;
+    font-size: 2rem;
     font-family: 'Inter';
 } 
 
 form input {
     font-family: 'Inter';
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 10px;
+    margin-top: 1.5rem;
+    padding: 0.59rem;
+    border-radius: 1.3rem;
     vertical-align: center;
     width: 95%;
 }
@@ -60,7 +60,8 @@ form input {
 
 #logo img {
     position: absolute;
-    top: 490px;
+    top: 30rem;
+    left: 1.2rem;
 }
 
 #bar-left {

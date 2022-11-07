@@ -21,18 +21,20 @@ switch ($_REQUEST["acao"]) {
         }
         break;
     case "editar":
-        $nome = $_POST["nome"];
+        $user = $_POST["user"];
+        $name = $_POST["name"];
+        $password = md5($_POST["password"]);
         $email = $_POST["email"];
-        $senha = md5($_POST["senha"]);
-        $data_nasc = $_POST["data_nasc"];
+        $department = $_POST["department"];
 
-        $sql = "UPDATE usuarios SET 
-                    nome='{$nome}',
+        $sql = "UPDATE users SET 
+                    usuario='{$user}',
+                    senha='{$password}',
+                    nome='{$name}',
                     email='{$email}',
-                    senha='{$senha}',
-                    data_nasc='{$data_nasc}'
+                    departamento='{$department}'
                 WHERE 
-                    id=".$_REQUEST["id"];
+                    id_users=".$_REQUEST["id_users"];
                             
 
         $res = $conn->query($sql);

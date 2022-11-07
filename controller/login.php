@@ -20,10 +20,10 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
 
     if (empty($user)) {  
         header("Location: ../view/index.php?error=Informe o seu usuário");
-        exit();
+        exit;
     } else if (empty($password)) {
         header("Location: ../view/index.php?error=Informe a sua senha");
-        exit();
+        exit;
     } else {
         $sql = "SELECT * FROM users WHERE usuario = '$user' AND senha = '$password'";
         $result = mysqli_query($conn, $sql);
@@ -34,20 +34,20 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
                 $_SESSION['usuario'] = $row['usuario'];
                 $_SESSION['nome'] = $row['nome'];
                 header("Location: ../view/menu.php");
-                exit();
+                exit;
             } else {
                 header("Location: ../view/index.php?error=Usuário ou senha incorretos");
-                exit();
+                exit;
             }
         } else {
             echo "<script>alert('Usuário ou senha incorretos');</script>";
             header("Location: ../view/index.php?error=Usuário ou senha incorretos");
-            exit();
+            exit;
         }
     }
 } else {
     header("Location: ../view/index.php");
-    exit();
+    exit;
 }
 
 

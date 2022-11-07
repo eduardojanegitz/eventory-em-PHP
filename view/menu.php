@@ -47,21 +47,29 @@ if (isset($_SESSION['usuario'])) {
                     <span class="material-symbols-outlined">app_registration</span>
                     <h3>Cadastro de Usuários</h3>
                 </a>
-                <a href="?page=consultar" class="active">
+                <a href="?page=consultar">
                     <span class="material-symbols-outlined">list_alt</span>
                     <h3>Consultar Usuários</h3>
                 </a>
                 <a href="?page=cadastro-grupo-ativos">
                     <span class="material-symbols-outlined">app_registration</span>
-                    <h3>Cadastro de Grupo de Ativos</h3>
+                    <h3>Cadastro de Grupo de Itens</h3>
                 </a>
                 <a href="?page=cadastro-ativos">
                     <span class="material-symbols-outlined">app_registration</span>
-                    <h3>Cadastro de Ativos</h3>
+                    <h3>Cadastro de Itens</h3>
+                </a>
+                <a href="?page=consultar-ativos">
+                    <span class="material-symbols-outlined">app_registration</span>
+                    <h3>Consulta de Itens</h3>
                 </a>
                 <a href="?page=etiqueta">
                     <span class="material-symbols-outlined">app_registration</span>
                     <h3>Gerar Etiquetas</h3>
+                </a>
+                <a href="?page=ler-etiquetas">
+                    <span class="material-symbols-outlined">app_registration</span>
+                    <h3>Ler Etiquetas</h3>
                 </a>
                 <a href="index.php">
                     <span class="material-symbols-outlined">logout</span>
@@ -86,8 +94,10 @@ if (isset($_SESSION['usuario'])) {
                     break;
                 case "salvar-ativos":
                     include("../controller/salvar-ativos.php");
+                    break;
                 case "salvar-etiqueta":
                     include("../controller/salvar-etiqueta.php");
+                    break;
                 case "editar":
                     include("editar-usuario.php");
                     break;
@@ -97,18 +107,29 @@ if (isset($_SESSION['usuario'])) {
                 case "cadastro-ativos":
                     include("cadastro-ativos.php");
                     break;
+                case "consultar-ativos":
+                    include("consultar-ativos.php");
+                    break;
                 case "etiqueta":
                     include("gerar-etiqueta.php");
+                    break;
+                case "ler-etiquetas":
+                    include("leitura-etiquetas.php");
                     break;
                 default:
 
 
-                    
-                    
-                        
-                        $sql = "SELECT * FROM asset;";
-                        $res = $conn->query($sql);
-                        $rowcount = mysqli_num_rows($res);
+
+
+
+                    $sql = "SELECT * FROM asset;";
+                    $res = $conn->query($sql);
+                    $rowcount = mysqli_num_rows($res);
+
+
+                    $sql1 = "SELECT * FROM users;";
+                    $res1 = $conn->query($sql1);
+                    $rowusers = mysqli_num_rows($res1);
                     
 
                     print "<h1 class='title-main'>Dashboard</h1>
@@ -150,8 +171,8 @@ if (isset($_SESSION['usuario'])) {
                 <div class='middle'>
 
                     <div class='left'>
-                        <h3>Total de Ativos</h3>
-                        <h1>1000</h1>
+                        <h3>Total de Usuários</h3>
+                        <h1>$rowusers</h1>
                     </div>
                     <div class='progress'>
                         <svg>
@@ -174,14 +195,14 @@ if (isset($_SESSION['usuario'])) {
             <thead>
                 <tr>
                     <th>Usuário</th>
-                    <th>Usuário</th>
-                    <th>Usuário</th>
+                    <th>Data</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>eduardo.alves</td>
-                    <td>eduardo.alves</td>
+                    <td></td>
                     <td>eduardo.alves</td>
                 </tr>
                 <tr>
@@ -199,6 +220,7 @@ if (isset($_SESSION['usuario'])) {
 
         </main>
 
+
         <div class="right">
             <div class="top">
                 <button id="menu-btn">
@@ -210,11 +232,11 @@ if (isset($_SESSION['usuario'])) {
                 </div>
                 <div class="profile">
                     <div class="info">
-                        <p>Hey, <b>Evecoding</b></p>
+                        <p>Olá, <b>Evecoding</b></p>
                         <small class="text-muted">Admin</small>
                     </div>
                     <div class="profile-photo">
-                        <img src="../images/logo-evecoding.png" alt="">
+                        <a href=""><img src="../images/logo-evecoding.png" alt=""></a>
                     </div>
                 </div>
             </div>
