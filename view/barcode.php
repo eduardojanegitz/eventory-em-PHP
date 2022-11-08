@@ -13,34 +13,43 @@ include("../model/config.php");
 </head>
 
 <body>
-<?php   
-    // $sql = "SELECT concat(MAX(id_barcode), lote, qtd) FROM barcodee;";
-    $sql = "SELECT * FROM barcodee ORDER BY id_barcode DESC;";
-    // $sql1 = "SELECT b.lote, b.qtd, a.nome_ativo from barcodee AS b INNER JOIN asset AS a ON(b.id_asset = a.id_asset) WHERE b.id_asset = {$row->id_asset} ;";
-    // $res1 = $conn->query($max);
-    
-    $res = $conn->query($sql);
-   
-    $row = $res->fetch_object();
-    ?>
-    <div class="in">
-        <input type="text" class="input" placeholder="Enter Value" maxlength="10" value="<?php print $row->id_asset . $row->lote . $row->qtd?>" disabled="disabled">
+    <div class="barCodeMain">
         <?php
-        $sql1 = "SELECT b.lote, b.qtd, a.nome_ativo from barcodee AS b INNER JOIN asset AS a ON(b.id_asset = a.id_asset) WHERE b.id_asset = {$row->id_asset} ;";
-        $res1 = $conn->query($sql1);
-        $row1 = $res1->fetch_object();
-        print "<h2 style='text-align: center'>$row1->nome_ativo</h2>"
+        // $sql = "SELECT concat(MAX(id_barcode), lote, qtd) FROM barcodee;";
+        $sql = "SELECT * FROM barcodee ORDER BY id_barcode DESC;";
+        // $sql1 = "SELECT b.lote, b.qtd, a.nome_ativo from barcodee AS b INNER JOIN asset AS a ON(b.id_asset = a.id_asset) WHERE b.id_asset = {$row->id_asset} ;";
+        // $res1 = $conn->query($max);
 
+        $res = $conn->query($sql);
+
+        $row = $res->fetch_object();
         ?>
-        <img class="img" src="../images/logo-facens-azul.png" alt="">
-        <svg style="text-align: center;" id="barcode" ></svg>
-        <button class="submit" onclick="imprimir()">Gerar</button>
-        <button class="submit " onclick="window.print()">Imprimir</button>
-        
-        
+        <div class="in">
+            <?php
+            $sql1 = "SELECT b.lote, b.qtd, a.nome_ativo from barcodee AS b INNER JOIN asset AS a ON(b.id_asset = a.id_asset) WHERE b.id_asset = {$row->id_asset} ;";
+            $res1 = $conn->query($sql1);
+            $row1 = $res1->fetch_object();
+            print "<h2 style='text-align: center'>$row1->nome_ativo</h2>"
+
+            ?>
+            <img class="barCodeImg" src="../images/logo-facens-azul.png" alt="">
+            <svg style="text-align: center;" id="barcode"></svg>
+            <input 
+            style="text-align: center; margin-left: 4rem; margin-bottom: 2rem;"
+            type="text"
+            class="input"
+            maxlength="10" value="<?php print $row->id_asset . $row->lote . $row->qtd ?>" disabled="disabled">
+
+            <div class="footer">
+                <button class="submit" onclick="imprimir()">Gerar</button>
+                <button class="submit " onclick="window.print()">Imprimir</button>
+            </div>
+
+
+
+        </div>
     </div>
 
-   
     <!-- <div id="camera">
 
     </div> -->

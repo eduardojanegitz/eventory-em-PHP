@@ -24,6 +24,7 @@
             print "<th>#</th>";
             print "<th class='table'>Nome do Ativo</th>";
             print "<th>Depreciação</th>";
+            print "<th>Ações</th>";
             while ($row = $res->fetch_object()) {
                 print "<tr class='table'>";
                 print "<td>" . $row->id_asset. "</td>";

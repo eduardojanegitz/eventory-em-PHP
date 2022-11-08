@@ -26,55 +26,18 @@
         <label class="box-label">E-mail</label>
         <input class="box" type="email" name="email">
 
-        <label>Departamento</label>
-        <input type="text" name="department">
-
         <label class="box-label">Departamento</label>
         <select class="box" type="text" name="department" required>
-            <option value="" >Selecione o seu departamento...</option>
+            <option value="">Selecione o seu departamento...</option>
             <option value="TI">TI</option>
             <option value="controladoria">Controladoria</option>
             <option value="compras">Compras</option>
             <option value="portaria">Portaria</option>
         </select>
         <button class="btn" type="submit">Cadastrar</button>
-        
+
     </form>
 
 </body>
 
 </html>
-<style>
-    .container {
-        width: 180px;
-        position: relative;
-        left: 6rem;
-
-    }
-
-    .title {
-        position: relative;
-        left: 6rem;
-
-    }
-
-    .separatorInput {
-        position: relative;
-        margin-top: 45px;    }
-
-    #input {
-        border: 1px solid black;
-        width: 450px;
-        height:30px;
-        border-radius: 10px;
-    }
-    #button {
-        border: transparent;
-        color: white;
-        width: 150px;
-        height: 35px;
-        border-radius: 10px;
-        background-color: #4169E1;
-        
-    }
-</style>

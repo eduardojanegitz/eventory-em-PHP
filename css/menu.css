@@ -296,10 +296,7 @@ main .title-main {
 
 .table {
     border-collapse: collapse;
-    width: 50rem;
-
-
-
+    width: 40rem;
 }
 
 td {
@@ -721,7 +718,9 @@ main .inventarios-recentes a {
 } */
 
 #barcode {
+    margin-left: 4rem;
     display: flex;
+    max-height: 4rem;
     flex-direction: row;
 }
 
@@ -730,12 +729,31 @@ main .inventarios-recentes a {
     height: 5%;
 }
 
+
+
+.barCodeImg {
+    width: 15%;
+    height: 20%;
+}
+
+.in {
+    position: absolute;
+    margin-left: 35rem;
+    width: 300px;
+    height: 250px;
+}
+
+.footer {
+    margin-left: 4rem;
+    width: 180px;
+}
+
 .submit {
-    width: 5%;
-    height: 5%;
+    width: 80px;
+    height: 30px;
     background: #111e88;
     color: #dce1eb;
-    border-radius: 15%;
+    border-radius: 50px;
 }
 
 .btn-editar {
@@ -758,9 +776,4 @@ main .inventarios-recentes a {
     margin-bottom: 0.3rem;
     margin-top: 0.3rem;
     cursor: pointer;
-}
-
-.in {
-
-    width: 45rem;
 }
