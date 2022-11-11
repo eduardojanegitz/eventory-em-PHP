@@ -9,6 +9,8 @@
 <body>
 <div id="camera">
 <button class="ler">Ler</button>
+
+<input id="teste" value=""><script></script></input>
 </div> 
 
 <script src="../js/quagga.min.js"></script>
@@ -31,9 +33,20 @@
         Quagga.start();
     });
 
-    Quagga.onDetected(function (data) {
-        console.log(data);
+       Quagga.onDetected(function nome (data) {
+        var lendo = document.getElementById('teste').value;
+        
+        document.getElementById('teste').value = data.codeResult.code;
+    
+     
     })
+
+   function ler() {
+        var lendo = document.queryElementById('teste').value;
+        var res = lendo.split("|");
+        console.log(res);
+   }
+
 </script> 
 
 </body>

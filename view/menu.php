@@ -71,6 +71,10 @@ if (isset($_SESSION['usuario'])) {
                     <span class="material-symbols-outlined">app_registration</span>
                     <h3>Ler Etiquetas</h3>
                 </a>
+                <a href="?page=depreciacao">
+                    <span class="material-symbols-outlined">app_registration</span>
+                    <h3>Depreciação</h3>
+                </a>
                 <a href="index.php">
                     <span class="material-symbols-outlined">logout</span>
                     <h3>Logout</h3>
@@ -115,6 +119,9 @@ if (isset($_SESSION['usuario'])) {
                     break;
                 case "ler-etiquetas":
                     include("leitura-etiquetas.php");
+                    break;
+                case "depreciacao":
+                    include("depreciacao.php");
                     break;
                 default:
 
@@ -244,62 +251,7 @@ if (isset($_SESSION['usuario'])) {
 
     </div>
 
-
+<script src="../js/index.js"></script>
 </body>
 
 </html>
-<style>
-    a:hover {
-
-        background-color: #CCCCFF;
-        color: blue;
-    }
-    .id {
-        margin-top: -38px;
-        position: relative;
-        left: 3rem;
-    }
-    #sla{
-        margin-left: -4px;
-        color: #0818A8;
-    }
-    #logo {
-        right: 5rem;
-        width: 300px;
-        height: 0px;
-    }
-
-    #logo img {
-        max-width: 45px;
-        max-height: 45px;
-        width: auto;
-        height: auto;
-    }
-
-
-    #main {
-        height: 500px;
-        background-color: #D3D3D3;
-    }
-
-    .cols-sample-area {
-        top: 4rem;
-        position: relative;
-        width: 300px;
-        height: 250px;
-    }
-
-    .separator {
-        width: 250px;
-        margin-top: 20px;
-    }
-
-    #container {
-        height: 500px;
-        width: 600px;
-        float: none;
-        position: relative;
-        left: 10rem;
-        top: -18rem;
-
-    }

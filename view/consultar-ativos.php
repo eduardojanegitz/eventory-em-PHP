@@ -31,7 +31,7 @@
                 print "<td>" . $row->nome_ativo . "</td>";
                 print "<td>" . $row->depreciacao . "</td>";
                 print "<td>
-        <button class='btn-editar' onclick=\"location.href='?page=editar&id_asset=" . $row->id_asset. "';\" >Editar</button>
+        <button class='btn-editar' onclick=\"location.href='?page=editar-item&id_asset=" . $row->id_asset. "';\" >Editar</button>
         <button class='btn-excluir' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id_asset=" . $row->id_asset . "';}else{false;}\"
         >Excluir</button>
         </td>";

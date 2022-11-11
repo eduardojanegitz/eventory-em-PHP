@@ -9,9 +9,34 @@
 </head>
 
 <body>
+
+
     <h1 class="title-main">Cadastro de Itens</h1>
     <form class="flex" action="?page=salvar-ativos" method="POST">
         <input type="hidden" name="acao-ativos" value="cadastrar-patrimonio">
+
+        <label class="box-label">Grupo do Item</label>
+
+        <?php
+
+
+        ?>
+        <select class="box" name="nome_fantasia">
+            
+            <?php
+
+            $sql = "SELECT * FROM asset_group;";
+            $res = $conn->query($sql);
+            $row = $res->fetch_object();
+
+
+            while ($row = mysqli_fetch_assoc($res)) {
+                echo '<option value="' . $row['descricao'] . '"> ' .  ' </option>';
+            }
+            ?>
+
+        </select>
+
 
         <label class="box-label">Descrição do Item</label>
         <input class="box" type="text" name="nome">

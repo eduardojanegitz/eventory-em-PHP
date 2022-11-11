@@ -38,7 +38,7 @@ include("../model/config.php");
             style="text-align: center; margin-left: 4rem; margin-bottom: 2rem;"
             type="text"
             class="input"
-            maxlength="10" value="<?php print $row->id_asset . $row->lote . $row->qtd ?>" disabled="disabled">
+            maxlength="10" value="<?php print $row->id_asset . "|" . $row->lote . "|" .  $row->qtd ?>" disabled="disabled">
 
             <div class="footer">
                 <button class="submit" onclick="imprimir()">Gerar</button>
