@@ -159,11 +159,8 @@ if (isset($_SESSION['usuario'])) {
                                       </div>
 
                                     <div class='progress'>
-                                        <svg>
-                                            <circle cx='38' cy='38' r='36'></circle>
-                                        </svg>
-                                        <div class='number'>
-                                            <p>80%</p> 
+                                        <div id='grafico'> 
+                                           <canvas id='myChart'></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -250,8 +247,25 @@ if (isset($_SESSION['usuario'])) {
         </div>
 
     </div>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="../js/index.js"></script>
+<script>
+  const chart = document.getElementById('myChart');
+
+  new Chart(chart, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [12, 9, 13],
+     
+      }]
+    },
+    options: {}
+  });
+
+
+</script>
+
 </body>
 
 </html>
