@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    
 
 
     <h1 class="title-main">Cadastro de Itens</h1>
@@ -17,26 +18,27 @@
 
         <label class="box-label">Grupo do Item</label>
 
-        <?php
-
-
-        ?>
+        
         <select class="box" name="nome_fantasia">
-            
+            <option value="">Selecione</option>
             <?php
 
-            $sql = "SELECT * FROM asset_group;";
+            $sql = "SELECT id_asset_group, descricao FROM asset_group ";
+            
+           
+            
             $res = $conn->query($sql);
-            $row = $res->fetch_object();
+           
 
-
-            while ($row = mysqli_fetch_assoc($res)) {
-                echo '<option value="' . $row['descricao'] . '"> ' .  ' </option>';
-            }
-            ?>
+            while ($row = mysqli_fetch_assoc($res)) { ?>
+                <option  value="<?php echo $row['descricao']; ?>"> <?php echo $row['descricao']; ?></option> <?php } ?>
+            
+        
 
         </select>
 
+        <label class="box-label">Código do Grupo do Item</label>
+        <input class="box" type="text" name="id_asset_group" value="<?php echo $row['id_asset_group']?>" >
 
         <label class="box-label">Descrição do Item</label>
         <input class="box" type="text" name="nome">

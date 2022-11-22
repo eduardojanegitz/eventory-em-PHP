@@ -12,7 +12,7 @@
     <main>
         <h1 class="title-main">Consultar Ativos</h1>
         <?php
-        $sql = "SELECT * FROM asset";
+        $sql = "SELECT ass.id_asset, ass.nome_ativo, ass.fornecedor, ass.valor, a.descricao FROM asset  AS ass INNER JOIN asset_group AS a ON a.id_asset_group = ass.id_asset_group";
 
         $res = $conn->query($sql);
 
@@ -23,13 +23,17 @@
             print "<tr class='table'>";
             print "<th>#</th>";
             print "<th class='table'>Nome do Ativo</th>";
-            print "<th>Depreciação</th>";
+            print "<th>Fornecedor</th>";
+            print "<th>Valor</th>";
+            print "<th>Grupo do Item</th>";
             print "<th>Ações</th>";
             while ($row = $res->fetch_object()) {
                 print "<tr class='table'>";
                 print "<td>" . $row->id_asset. "</td>";
                 print "<td>" . $row->nome_ativo . "</td>";
-                print "<td>" . $row->depreciacao . "</td>";
+                print "<td>" . $row->fornecedor . "</td>";
+                print "<td>" . $row->valor . "</td>";
+                print "<td>" . $row->descricao . "</td>";
                 print "<td>
         <button class='btn-editar' onclick=\"location.href='?page=editar-item&id_asset=" . $row->id_asset. "';\" >Editar</button>
         <button class='btn-excluir' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id_asset=" . $row->id_asset . "';}else{false;}\"

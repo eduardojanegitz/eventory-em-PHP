@@ -40,6 +40,7 @@
             print "<table class='table flex'>";
             print "<tr class='table'>";
             print "<th class='table'>Nome do Item</th>";
+            print "<th class='table'>Fornecedor</th>";
             print "<th>Depreciação(%)</th>";
             print "<th>Valor (R$)</th>";
             print "<th>Taxa Mensal</th>";
@@ -47,6 +48,7 @@
             while ($row = $res->fetch_object()) {
                 print "<tr class='table'>";
                 print "<td>" . $row->nome_ativo . "</td>";
+                print "<td>" . $row->fornecedor . "</td>";
                 print "<td>" . $row->depreciacao . "</td>";
                 print "<td>" . $row->valor . "</td>";
                 print "<td>" . $row->valor * (($row->depreciacao / 100) / 12)  . "</td>";

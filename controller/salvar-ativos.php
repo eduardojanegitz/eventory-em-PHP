@@ -19,16 +19,18 @@ switch ($_REQUEST["acao-ativos"]) {
         break;
 
     case "cadastrar-patrimonio":
+        $id_asset_group = $_POST["id_asset_group"];
         $nome = $_POST["nome"];
         $nf = $_POST["nf"];
         $fornecedor = $_POST["fornecedor"];
         $valor = $_POST["valor"];
         $depreciacao = $_POST["depreciacao"];
 
-        $sql = "INSERT INTO asset (nome_ativo, nf, fornecedor, valor, depreciacao) VALUES
-            ('{$nome}','{$nf}','{$fornecedor}','{$valor}','{$depreciacao}')";
-        $res = $conn->query($sql);
-
+        
+            $sql = "INSERT INTO asset (nome_ativo, nf, fornecedor, valor, depreciacao, id_asset_group) VALUES
+            ('{$nome}','{$nf}','{$fornecedor}','{$valor}','{$depreciacao}','{$id_asset_group}')";
+            $res = $conn->query($sql);
+        
         if ($res == true) {
             print "<script>alert('Cadastrado com sucesso!');</script>";
             print "<script>location.href='menu.php'</script>";
@@ -38,37 +40,37 @@ switch ($_REQUEST["acao-ativos"]) {
         }
         break;
 
-        case "editar-item":
-            $nome_ativo = $_POST["nome_ativo"];
-            $depreciacao = $_POST["depreciacao"];
-    
-            $sql = "UPDATE asset SET 
+    case "editar-item":
+        $nome_ativo = $_POST["nome_ativo"];
+        $depreciacao = $_POST["depreciacao"];
+
+        $sql = "UPDATE asset SET 
                         nome_ativo='{$nome_ativo}',
                         depreciacao='{$depreciacao}',
                     WHERE 
-                        id_asset=".$_REQUEST["id_asset"];
-                                
-    
-            $res = $conn->query($sql);
-    
-            if ($res == true) {
-                print "<script>alert('Editado com sucesso!');</script>";
-                print "<script>location.href='?page=listar;'</script>";
-            } else {
-                print "<script>alert('Não foi possível editar!');</script>";
-                print "<script>location.href='?page=listar;'</script>";
-            }
-            break;
-        case "excluir":
-            $sql = "DELETE FROM users WHERE id_users=".$_REQUEST["id_users"];
-    
-            $res = $conn->query($sql);
-            if ($res == true) {
-                print "<script>alert('Excluído com sucesso!');</script>";
-                print "<script>location.href='?page=consultar;'</script>";
-            } else {
-                print "<script>alert('Não foi possível excluir!');</script>";
-                print "<script>location.href='?page=consultar;'</script>";
-            }
-            break;
+                        id_asset=" . $_REQUEST["id_asset"];
+
+
+        $res = $conn->query($sql);
+
+        if ($res == true) {
+            print "<script>alert('Editado com sucesso!');</script>";
+            print "<script>location.href='?page=listar;'</script>";
+        } else {
+            print "<script>alert('Não foi possível editar!');</script>";
+            print "<script>location.href='?page=listar;'</script>";
+        }
+        break;
+    case "excluir":
+        $sql = "DELETE FROM users WHERE id_users=" . $_REQUEST["id_users"];
+
+        $res = $conn->query($sql);
+        if ($res == true) {
+            print "<script>alert('Excluído com sucesso!');</script>";
+            print "<script>location.href='?page=consultar;'</script>";
+        } else {
+            print "<script>alert('Não foi possível excluir!');</script>";
+            print "<script>location.href='?page=consultar;'</script>";
+        }
+        break;
 }

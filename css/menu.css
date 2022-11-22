@@ -36,6 +36,8 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
@@ -46,6 +48,8 @@
     list-style: none;
     box-sizing: border-box;
 }
+
+/* ------ */
 
 html {
     font-size: 14px;
@@ -82,22 +86,27 @@ img {
 h1 {
     font-weight: 800;
     font-size: 1.8rem;
+    color: var(--color-dark);
 }
 
 h2 {
     font-size: 1.4rem;
+    color: var(--color-dark);
 }
 
 h3 {
     font-size: 0.87rem;
+
 }
 
 h4 {
     font-size: 0.8rem;
+    color: var(--color-dark);
 }
 
 h5 {
     font-size: 0.77rem;
+    color: var(--color-dark);
 }
 
 small {
@@ -321,6 +330,7 @@ th {
     /* width: 100%;
     */
     width: 20rem;
+    color: var(--color-dark);
 }
 
 .date {
@@ -776,4 +786,27 @@ main .inventarios-recentes a {
     margin-bottom: 0.3rem;
     margin-top: 0.3rem;
     cursor: pointer;
+}
+
+#camera {
+    margin-left: 10%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-right: 0.7rem;
+    border: 2px solid var(--color-dark);
+    height: 34.61rem;
+}
+
+.ler {
+    display: inline;
+    margin-left: 5rem;
+}
+
+#campo-codigo {
+    width: 33.6rem;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 1.3rem;
+    text-align: center;
+    
 }

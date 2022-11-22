@@ -5,14 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 <body>
-<div id="camera">
-<button class="ler">Ler</button>
 
-<input id="teste" value=""><script></script></input>
+<div id="camera" >
+
+
+
 </div> 
-
+<h2 class="ler ">Código de Barras</h2>
+<input id="campo-codigo" value=""></input>
+<button class="btn" style="margin-left: 17.9rem; margin-top: 0.68rem">Enviar</button>
 <script src="../js/quagga.min.js"></script>
 <script>
     Quagga.init({
@@ -34,10 +38,10 @@
     });
 
        Quagga.onDetected(function nome (data) {
-        var lendo = document.getElementById('teste').value;
+        var lendo = document.getElementById('campo-codigo').value;
         
-        document.getElementById('teste').value = data.codeResult.code;
-    
+        document.getElementById('campo-codigo').value = data.codeResult.code;
+        console.log(data);
      
     })
 
