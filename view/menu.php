@@ -125,106 +125,74 @@ if (isset($_SESSION['usuario'])) {
                     break;
                 default:
 
-
-
-
-
                     $sql = "SELECT * FROM asset;";
                     $res = $conn->query($sql);
                     $rowcount = mysqli_num_rows($res);
-
-
                     $sql1 = "SELECT * FROM users;";
                     $res1 = $conn->query($sql1);
                     $rowusers = mysqli_num_rows($res1);
-                    
 
                     print "<h1 class='title-main'>Dashboard</h1>
-                        
-                        <div class='date'>
-                            <input type='date'>
-                        </div>
-
-                      <div class='insights'>
-                        <div class='total-ativos'>
-                            <span class='material-symbols-outlined'>analytics</span>
-
-                                <div class='middle'>
-                                    <div class='left'>
-                                        <h3>Total de Ativos</h3>
-
-                                            <h1> $rowcount </h1>
-                                        
-                                    
-                                      </div>
-
-                                    <div class='progress'>
-                                        <div id='grafico'> 
-                                           <canvas id='myChart'></canvas>
+                        <div class='insights'>
+                            <div class='total-ativos'>
+                                <span class='material-symbols-outlined'>analytics</span>
+                                    <div class='middle'>
+                                        <div class='left'>
+                                            <h3>Total de Ativos</h3>
+                                             <h1> $rowcount </h1>                                        
+                                         </div>
+                                         <div class='progress'>
+                                            <div id='assetGrafic'> 
+                                                <canvas id='myChart'></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <small class='text-muted'>Últimos 24 horas</small>
+                             </div>
+                                <div class='total-ativos'>
+                                    <span class='material-symbols-outlined'>analytics</span>
+                                 <div class='middle'>
+                                        <div class='left'>
+                                           <h3>Total de Usuários</h3>
+                                           <h1>$rowusers</h1>
+                                     </div>
+                                      <div class='progress'>
+                                           <div id='userGrafic'> 
+                                            <canvas id='mySecondChart'></canvas>
                                         </div>
                                     </div>
                                 </div>
-
-                                <small class='text-muted'>Últimos 24 horas</small>
+                             <small class='text-muted'>Últimos 24 horas</small>
+                            </div>
                         </div>
-
-
-            <div class='total-ativos'>
-                <span class='material-symbols-outlined'>analytics</span>
-
-                <div class='middle'>
-
-                    <div class='left'>
-                        <h3>Total de Usuários</h3>
-                        <h1>$rowusers</h1>
-                    </div>
-                    <div class='progress'>
-                        <svg>
-                            <circle cx='38' cy='38' r='36'></circle>
-                        </svg>
-                        <div class='number'>
-                        <p>70%</p>
-                        
-                    </div>
-                    
-                    </div>
-                </div>
-                <small class='text-muted'>Últimos 24 horas</small>
-            </div>
-        </div>
-        
-        <div class='inventarios-recentes'>
-        <h2>Inventários Recentes</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Usuário</th>
-                    <th>Data</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>eduardo.alves</td>
-                    <td></td>
-                    <td>eduardo.alves</td>
-                </tr>
-                <tr>
-                    <td>eduardo.alves</td>
-                    <td>eduardo.alves</td>
-                    <td>eduardo.alves</td>
-                </tr>
-            </tbody>
-        </table>
-        <a href='#'>Mostrar tudo</a>
-    </div>";
+<div class='inventarios-recentes'>
+    <h2>Inventários Recentes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Usuário</th>
+                <th>Data</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>eduardo.alves</td>
+                <td></td>
+                <td>eduardo.alves</td>
+            </tr>
+            <tr>
+                <td>eduardo.alves</td>
+                <td>eduardo.alves</td>
+                <td>eduardo.alves</td>
+            </tr>
+        </tbody>
+    </table>
+     <a href='#'>Mostrar tudo</a>
+</div>";
             }
             ?>
-
-
         </main>
-
-
         <div class="right">
             <div class="top">
                 <button id="menu-btn">
@@ -247,24 +215,35 @@ if (isset($_SESSION['usuario'])) {
         </div>
 
     </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../js/index.js"></script>
-<script>
-  const chart = document.getElementById('myChart');
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/index.js"></script>
+    <script>
+        const chart = document.getElementById('myChart');
 
-  new Chart(chart, {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        data: [12, 9, 13],
-     
-      }]
-    },
-    options: {}
-  });
+        new Chart(chart, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [10, 12],
 
+                }]
+            },
+            options: {}
+        });
 
-</script>
+        const secondChart = document.getElementById('mySecondChart');
+
+        new Chart(secondChart, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [10, 10],
+
+                }]
+            },
+            options: {}
+        });
+    </script>
 
 </body>
 
