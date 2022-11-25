@@ -578,7 +578,6 @@ main .inventarios-recentes a {
         width: 100%;
         grid-template-columns: 1fr;
         margin-left: -10%;
-
     }
 
     aside {
@@ -634,12 +633,12 @@ main .inventarios-recentes a {
 
     main .inventarios-recentes {
         position: relative;
-        margin: 3rem 0 0 0;
+        margin: 5rem;
         width: 100%;
     }
 
     main .inventarios-recentes .table {
-        width: 100%;
+        /* width: 500rem; */
         margin: 0;
     }
 
@@ -664,7 +663,7 @@ main .inventarios-recentes a {
     .right .top .theme-toggler {
         width: 4.4rem;
         position: absolute;
-        left: 66%;
+        left: 59%;
     }
 
     .right .profile .info {

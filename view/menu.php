@@ -132,6 +132,27 @@ if (isset($_SESSION['usuario'])) {
                     $res1 = $conn->query($sql1);
                     $rowusers = mysqli_num_rows($res1);
 
+                    $sql4 = "SELECT  * FROM asset_group;";
+                    $res4 = $conn->query($sql4);
+                    $rowcount4 = mysqli_num_rows($res4);
+
+                    $sql5 = "SELECT * FROM users WHERE departamento = 'TI';";
+                    $res5 = $conn->query($sql5);
+                    $ti = mysqli_num_rows($res5);
+
+                    $sql6 = "SELECT * FROM users WHERE departamento = 'Controladoria';";
+                    $res6 = $conn->query($sql6);
+                    $controladoria = mysqli_num_rows($res6);
+
+                    $sql7 = "SELECT * FROM users WHERE departamento = 'Compras';";
+                    $res7 = $conn->query($sql7);
+                    $compras = mysqli_num_rows($res7);
+
+                    $sql8 = "SELECT * FROM users WHERE departamento = 'Portaria';";
+                    $res8 = $conn->query($sql8);
+                    $portaria = mysqli_num_rows($res8);
+
+
                     print "<h1 class='title-main'>Dashboard</h1>
                         <div class='insights'>
                             <div class='total-ativos'>
@@ -139,7 +160,11 @@ if (isset($_SESSION['usuario'])) {
                                     <div class='middle'>
                                         <div class='left'>
                                             <h3>Total de Ativos</h3>
-                                             <h1> $rowcount </h1>                                        
+                                             <h1 style='color: var(--color-danger);'> $rowcount </h1>                                        
+                                         </div>
+                                        <div class='left'>
+                                            <h3>Total de Grupos</h3>
+                                             <h1 style='color: blue;'> $rowcount4 </h1>                                        
                                          </div>
                                          <div class='progress'>
                                             <div id='assetGrafic'> 
@@ -147,7 +172,7 @@ if (isset($_SESSION['usuario'])) {
                                             </div>
                                         </div>
                                     </div>
-                                <small class='text-muted'>Últimos 24 horas</small>
+                                
                              </div>
                                 <div class='total-ativos'>
                                     <span class='material-symbols-outlined'>analytics</span>
@@ -162,7 +187,7 @@ if (isset($_SESSION['usuario'])) {
                                         </div>
                                     </div>
                                 </div>
-                             <small class='text-muted'>Últimos 24 horas</small>
+                             
                             </div>
                         </div>
 <div class='inventarios-recentes'>
@@ -224,7 +249,7 @@ if (isset($_SESSION['usuario'])) {
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: [10, 12],
+                    data: ['<?php echo $rowcount4  ?>', '<?php echo $rowcount ?>'],
 
                 }]
             },
@@ -237,7 +262,7 @@ if (isset($_SESSION['usuario'])) {
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: [10, 10],
+                    data: ['<?php echo $ti ?>', '<?php echo $controladoria ?>', '<?php echo $compras ?>', '<?php echo $portaria ?>'],
 
                 }]
             },
