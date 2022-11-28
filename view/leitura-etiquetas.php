@@ -15,8 +15,32 @@
 
 </div> 
 <h2 class="ler ">Código de Barras</h2>
-<input id="campo-codigo" value=""></input>
-<button class="btn" style="margin-left: 17.9rem; margin-top: 0.68rem">Enviar</button>
+<input id="campo-codigo" value="1|2|3"></input>
+<button class="btn" style="margin-left: 17.9rem; margin-top: 0.68rem" onclick="ler()">Enviar</button>
+
+<form method="post">
+<input name="campo" id="campo" value="1"></input>
+<button class="btn" type="submit">Enviar</button>
+</form>
+
+<?php
+if(!isset($_POST)) {
+   $campo = $_POST['campo'];
+   $sql = "SELECT * FROM asset WHERE id_asset = '{$campo}';"; 
+   $res = $conn->query($sql);
+   $row = $res->fetch_object();
+if($res == true) {
+  echo $row->nome_ativo;
+} else {
+    echo "n";
+}
+} else {
+    echo "nao tem";
+}
+  
+   ?>
+  
+
 <script src="../js/quagga.min.js"></script>
 <script>
     Quagga.init({
@@ -46,10 +70,12 @@
     })
 
    function ler() {
-        var lendo = document.queryElementById('teste').value;
-        var res = lendo.split("|");
-        console.log(res);
+        var lendoCod = document.getElementById('campo-codigo').value.split('|');
+        document.getElementById('campo').value = lendoCod[0];
+        console.log(lendoCod);
    }
+
+ 
 
 </script> 
 
