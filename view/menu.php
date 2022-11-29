@@ -44,35 +44,35 @@ if (isset($_SESSION['usuario'])) {
                     <h3>Dashboard</h3>
                 </a>
                 <a href="?page=cadastro">
-                    <span class="material-symbols-outlined">app_registration</span>
+                    <span class="material-symbols-outlined">person_add</span>
                     <h3>Cadastro de Usuários</h3>
                 </a>
                 <a href="?page=consultar">
-                    <span class="material-symbols-outlined">list_alt</span>
+                    <span class="material-symbols-outlined">person_search</span>
                     <h3>Consultar Usuários</h3>
                 </a>
                 <a href="?page=cadastro-grupo-ativos">
-                    <span class="material-symbols-outlined">app_registration</span>
+                    <span class="material-symbols-outlined">library_add</span>
                     <h3>Cadastro de Grupo de Itens</h3>
                 </a>
                 <a href="?page=cadastro-ativos">
-                    <span class="material-symbols-outlined">app_registration</span>
+                    <span class="material-symbols-outlined">playlist_add</span>
                     <h3>Cadastro de Itens</h3>
                 </a>
                 <a href="?page=consultar-ativos">
-                    <span class="material-symbols-outlined">app_registration</span>
+                    <span class="material-symbols-outlined">manage_search</span>
                     <h3>Consulta de Itens</h3>
                 </a>
                 <a href="?page=etiqueta">
-                    <span class="material-symbols-outlined">app_registration</span>
+                    <span class="material-symbols-outlined">local_activity</span>
                     <h3>Gerar Etiquetas</h3>
                 </a>
                 <a href="?page=ler-etiquetas">
-                    <span class="material-symbols-outlined">app_registration</span>
+                    <span class="material-symbols-outlined">confirmation_number</span>
                     <h3>Ler Etiquetas</h3>
                 </a>
                 <a href="?page=depreciacao">
-                    <span class="material-symbols-outlined">app_registration</span>
+                    <span class="material-symbols-outlined">query_stats</span>
                     <h3>Depreciação</h3>
                 </a>
                 <a href="index.php">
@@ -156,7 +156,7 @@ if (isset($_SESSION['usuario'])) {
                     print "<h1 class='title-main'>Dashboard</h1>
                         <div class='insights'>
                             <div class='total-ativos'>
-                                <span class='material-symbols-outlined'>analytics</span>
+                                <span class='material-symbols-outlined'>monitoring</span>
                                     <div class='middle'>
                                         <div class='left'>
                                             <h3>Total de Ativos</h3>
@@ -175,7 +175,7 @@ if (isset($_SESSION['usuario'])) {
                                 
                              </div>
                                 <div class='total-ativos'>
-                                    <span class='material-symbols-outlined'>analytics</span>
+                                    <span class='material-symbols-outlined'>monitoring</span>
                                  <div class='middle'>
                                         <div class='left'>
                                            <h3>Total de Usuários</h3>
