@@ -23,19 +23,16 @@
         <input type="hidden" name="acao" value="editar">
         <input type="hidden" name="id" value="<?php print $row->id_users; ?>">
 
-        <label class="box-label">Usuário</label>
-        <input class="box" type="text" name="user" value="<?php print $row->usuario; ?>">
+        
+        <input class="box" type="text" name="user" placeholder="Usuário" value="<?php print $row->usuario; ?>">
 
-        <label class="box-label">Nome</label>
-        <input class="box" type="text" name="name" value="<?php print $row->nome; ?>">
+       
+        <input class="box" type="text" name="name" placeholder="Nome" value="<?php print $row->nome; ?>">
 
-            <!-- <label class="box-label">Senha</label>
-            <input class="box" type="password" name="password" value="<?php print $row->senha; ?>"> -->
 
-        <label class="box-label">E-mail</label>
-        <input class="box" type="email" name="email" value="<?php print $row->email; ?>">
+        <input class="box" type="email" name="email" placeholder="E-mail" value="<?php print $row->email; ?>">
 
-        <label class="box-label">Departamento</label>
+        
         <select class="box" type="text" name="department" required value="<?php print $row->departamento; ?>">
             <option value="">Selecione o seu departamento...</option>
             <option value="TI">TI</option>
@@ -44,7 +41,7 @@
             <option value="portaria">Portaria</option>
         </select>
         
-            <button type="submit" class="btn">Enviar</button>
+            <button type="submit" class="btn" style="height: 3rem;">Enviar</button>
         
     </form>
 </body>

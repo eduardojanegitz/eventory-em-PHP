@@ -5,57 +5,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Grupos de Ativos</title>
+    <title>Cadastro de Itens</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 </head>
 
 <body>
-    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("select[name='nome_fantasia']").blur(function() {
+                var $id_asset_group = $("input[name='id_asset_group']");
+                $.getJSON('../controller/getIdGrupo.php', {
+                    nome_fantasia: $(this).val()
+                }, function(json) {
+                    $id_asset_group.val(json.id_asset_group);
+                });
+            });
+        });
+    </script>
 
 
     <h1 class="title-main">Cadastro de Itens</h1>
     <form class="flex" action="?page=salvar-ativos" method="POST">
         <input type="hidden" name="acao-ativos" value="cadastrar-patrimonio">
 
-        <label class="box-label">Grupo do Item</label>
+        <!-- <label class="box-label">Grupo do Item</label> -->
 
-        
+
         <select class="box" name="nome_fantasia">
             <option value="">Selecione</option>
             <?php
 
             $sql = "SELECT id_asset_group, descricao FROM asset_group ";
-            
-           
-            
+
+
+
             $res = $conn->query($sql);
-           
+
 
             while ($row = mysqli_fetch_assoc($res)) { ?>
-                <option  value="<?php echo $row['descricao']; ?>"> <?php echo $row['descricao']; ?></option> <?php } ?>
-            
-        
+                <option value="<?php echo $row['descricao']; ?>"> <?php echo $row['descricao']; ?></option> <?php } ?>
+
+
 
         </select>
 
-        <label class="box-label">Código do Grupo do Item</label>
-        <input class="box" type="text" name="id_asset_group" value="<?php echo $row['id_asset_group']?>" >
+    
+        <input class="box" type="text" name="id_asset_group" placeholder="Código do Grupo do Item" readonly>
 
-        <label class="box-label">Descrição do Item</label>
-        <input class="box" type="text" name="nome">
+      
+        <input class="box" type="text" name="nome" placeholder="Descrição do Item">
 
-        <label class="box-label">Nota Fiscal</label>
-        <input class="box" type="text" name="nf">
+        
+        <input class="box" type="text" name="nf" placeholder="Nota Fiscal">
 
-        <label class="box-label">Nome do Fornecedor</label>
-        <input class="box" type="text" name="fornecedor">
+        <input class="box" type="text" name="fornecedor" placeholder="Nome do Fornecedor">
 
-        <label class="box-label">Valor</label>
-        <input class="box" type="number" name="valor">
+        <input class="box" type="number" name="valor" placeholder="Valor do Item">
 
-        <label class="box-label">Taxa de Depreciação</label>
-        <input class="box" type="number" name="depreciacao">
+        <input class="box" type="number" name="depreciacao" placeholder="Taxa de Depreciação" style="height: 3rem;">
 
-        <button class="btn" type="submit">Cadastrar</button>
+        <button class="btn" type="submit" style="height: 3rem;">Cadastrar</button>
     </form>
 
 </body>

@@ -166,7 +166,8 @@ aside .logo {
 }
 
 aside .logo .title {
-    color: #111e88;
+    /* color: #111e88; */
+    color: var(--color-primary-variant);
 }
 
 aside .logo img {
@@ -265,11 +266,11 @@ main .title-main {
 }
 
 .box {
-    border-radius: 10px;
+    border-radius: 2rem;
     border: 1px solid var(--color-dark);
     padding: 1.5%;
     margin-bottom: 5%;
-    width: 60%;
+    width: 80%;
     margin-left: 5%;
 }
 
@@ -281,31 +282,40 @@ main .title-main {
 }
 
 .flex {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     width: 100%;
+    margin-left: 5%; */
+
+    display: grid;
+    grid-template-columns: repeat(2, 75%);
+    grid-template-rows: repeat(3, 5rem);
+    grid-column-gap: 0;
+    grid-row-gap: 0.20rem;
     margin-left: 5%;
+
 }
 
 .btn {
     cursor: pointer;
     color: white;
     padding: 1.5%;
-    border-radius: 10px;
-    background: #4169E1;
+    border-radius: 2rem;
+    /* background: #4169E1; */
+    background: var(--color-primary);
     margin-left: 5%;
     width: 30%;
     transition: 1s;
 }
 
 .btn:hover {
-    background-color: #111e88;
+    background-color: var(--color-primary-variant);
     transition: all 1s ease;
 }
 
 .table {
     border-collapse: collapse;
-    width: 40rem;
+    width: 50rem;
 }
 
 td {
@@ -319,7 +329,7 @@ td {
     /* padding-right: 5rem; */
     /* border: 1px solid black; */
     text-align: center;
-    width: 20rem;
+    width: 30rem;
 }
 
 th {
@@ -571,6 +581,14 @@ main .inventarios-recentes a {
     main table tbody td th:first-child {
         display: none;
     }
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 5%;
+    }
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -686,6 +704,15 @@ main .inventarios-recentes a {
     .right .top button span {
         font-size: 2rem;
     }
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 5%;
+        align-items: center ;
+    }
+
 }
 
 /* .main {
@@ -788,12 +815,11 @@ main .inventarios-recentes a {
 }
 
 #camera {
-    margin-left: 10%;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    margin-left: 1.8%;
+    
+    margin-bottom: 1%;
     margin-right: 0.7rem;
-    border: 2px solid var(--color-dark);
-    height: 34.61rem;
+    height: 34.61rem; 
 }
 
 .ler {
@@ -802,16 +828,60 @@ main .inventarios-recentes a {
 }
 
 #campo-codigo {
-    width: 33.6rem;
+    
+    width: 20rem;
     height: 2rem;
     border: 1px solid black;
     border-radius: 1.3rem;
     text-align: center;
-
 }
 
-.teste {
+
+
+ select  {
   
-    display: none;
-}
+    background: #fff url('../images/seta.png') 95.5% 50% no-repeat;
+    background-size: 6%;
+  }
 
+  #inventario-leitura {
+    position: relative;
+    bottom: 80%;
+    left: 45%;
+    width: 20%;
+   
+  }
+
+  .tes {
+    height: 50%;
+  }
+
+  .leitura-direita {
+    position: absolute;
+    left: 60rem;
+  }
+
+  #item-lido {
+    position: relative;
+    bottom: 37rem;
+    left: 47rem;
+    width: 50%;
+  }
+  
+  .btn-leitura {
+    cursor: pointer;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    background: var(--color-primary);
+    margin-left: 2%;
+    width: 36%;
+    transition: 1s;
+  }
+
+  .btn-leitura:hover {
+    background-color: var(--color-primary-variant);
+    transition: all 1s ease;
+  }
+
+  

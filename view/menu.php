@@ -102,6 +102,9 @@ if (isset($_SESSION['usuario'])) {
                 case "salvar-etiqueta":
                     include("../controller/salvar-etiqueta.php");
                     break;
+                case "salvar-leitura":
+                    include("../controller/salvar-leitura.php");
+                    break;
                 case "editar":
                     include("editar-usuario.php");
                     break;
@@ -202,15 +205,11 @@ if (isset($_SESSION['usuario'])) {
         </thead>
         <tbody>
             <tr>
-                <td>eduardo.alves</td>
-                <td></td>
-                <td>eduardo.alves</td>
+                <td>admin</td>
+                <td>04/12/2022</td>
+                <td>Finalizado</td>
             </tr>
-            <tr>
-                <td>eduardo.alves</td>
-                <td>eduardo.alves</td>
-                <td>eduardo.alves</td>
-            </tr>
+            
         </tbody>
     </table>
      <a href='#'>Mostrar tudo</a>
@@ -262,7 +261,7 @@ if (isset($_SESSION['usuario'])) {
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: ['<?php echo $ti ?>', '<?php echo $controladoria ?>', '<?php echo $compras ?>', '<?php echo $portaria ?>'],
+                    data: ['<?php echo $ti  ?>', '<?php echo $controladoria ?>', '<?php echo $compras ?>', '<?php echo $portaria ?>'],
 
                 }]
             },

@@ -10,7 +10,7 @@
 
 <body>
     <main>
-        <h1 class="title-main">Consultar Ativos</h1>
+        <h1 class="title-main">Consultar Itens</h1>
         <?php
         $sql = "SELECT ass.id_asset, ass.nome_ativo, ass.fornecedor, ass.valor, a.descricao FROM asset  AS ass INNER JOIN asset_group AS a ON a.id_asset_group = ass.id_asset_group";
 
@@ -22,7 +22,7 @@
             print "<table class='table flex'>";
             print "<tr class='table'>";
             print "<th>#</th>";
-            print "<th class='table'>Nome do Ativo</th>";
+            print "<th class='table'>Nome do Item</th>";
             print "<th>Fornecedor</th>";
             print "<th>Valor</th>";
             print "<th>Grupo do Item</th>";

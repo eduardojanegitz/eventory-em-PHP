@@ -14,19 +14,21 @@
     <h1 class="title-main">Cadastro de Usuários</h1>
     <form class="flex" action="?page=salvar" method="POST">
         <input type="hidden" name="acao" value="cadastrar">
-        <label class="box-label">Usuário</label>
-        <input class="box" type="text" name="user">
+        <!-- <label class="box-label">Usuário</label> -->
+        <input class="box" type="text" name="user" placeholder="Usuário" placeholder="Usuário">
 
-        <label class="box-label">Nome</label>
-        <input class="box" type="text" name="name">
+        <!-- <label class="box-label">Nome</label> -->
+        <input class="box" type="text" name="name" placeholder="Nome">
 
-        <label class="box-label">Senha</label>
-        <input class="box" type="password" name="password">
+        <!-- <label class="box-label">Senha</label> -->
+        <input class="box" type="password" name="password" placeholder="Senha">
 
-        <label class="box-label">E-mail</label>
-        <input class="box" type="email" name="email">
+        <input class="box" type="password" name="password" placeholder="Confirme a sua senha">
 
-        <label class="box-label">Departamento</label>
+        <!-- <label class="box-label">E-mail</label> -->
+        <input class="box" type="email" name="email" placeholder="E-mail">
+
+        <!-- <label class="box-label">Departamento</label> -->
         <select class="box" type="text" name="department" required>
             <option value="">Selecione o seu departamento...</option>
             <option value="TI">TI</option>

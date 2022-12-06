@@ -9,16 +9,16 @@
 </head>
 
 <body>
-    <h1 class="title-main">Cadastro de Grupo de Ativos</h1>
+    <h1 class="title-main">Cadastro de Grupo de Itens</h1>
     <form class="flex" action="?page=salvar-ativos" method="POST">
     <input type="hidden" name="acao-ativos" value="cadastrar-ativos">
-        <label class="box-label">Descrição</label>
-        <input class="box" type="text" name="description">
+        <!-- <label class="box-label">Descrição</label> -->
+        <input class="box" type="text" name="description" placeholder="Descrição do Grupo">
 
-        <label class="box-label">Código Alternativo</label>
-        <input class="box" type="text" name="alternative">
+        <!-- <label class="box-label">Código Alternativo</label> -->
+        <input class="box" type="text" name="alternative" placeholder="Código Alternativo">
 
-        <button class="btn" type="submit">Cadastrar</button>
+        <button class="btn" type="submit" style="height: 3rem;">Cadastrar</button>
     </form>
 
 </body>
